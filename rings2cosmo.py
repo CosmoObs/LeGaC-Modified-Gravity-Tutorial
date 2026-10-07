@@ -545,8 +545,8 @@ def run_group_optimization(divided_data, priors, starts, seed=11):
         try:
             X_map = rings2cosmo.minimization_logprobability(*group_args, seed=seed, **starts, **priors)
             X_ml = rings2cosmo.minimization_loglikelihood(*group_args, seed=seed, **starts)
-            print(f"  MAP parameters: a={X_map[0]:.3f}, ß={X_map[1]:.3f}, d={X_map[2]:.3f}, ?={X_map[3]:.3f}")
-            print(f"  ML parameters:  a={X_ml[0]:.3f}, ß={X_ml[1]:.3f}, d={X_ml[2]:.3f}, ?={X_ml[3]:.3f}")
+            print(f"  MAP parameters: alpha={X_map[0]:.3f}, beta={X_map[1]:.3f}, delta={X_map[2]:.3f}, gamma={X_map[3]:.3f}")
+            print(f"  ML parameters:  alpha={X_ml[0]:.3f}, beta={X_ml[1]:.3f}, delta={X_ml[2]:.3f}, gamma={X_ml[3]:.3f}")
             results[group_name] = (X_map, X_ml)
         except Exception as e:
             print(f"  Error optimizing {group_name}: {e}")
